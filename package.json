@@ -1,0 +1,29 @@
+{
+  "name": "midu-api",
+  "version": "0.0.2",
+  "description": "API designed on the bootcamp lessons from Midudev",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "lint": "eslint --fix"
+  },
+  "keywords": [
+    "API",
+    "Express",
+    "Nodejs"
+  ],
+  "author": "@Scipio14 - Federico Macías",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "2.0.7",
+    "standard": "^16.0.3"
+  },
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.17.1"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json"
+  }
+}
