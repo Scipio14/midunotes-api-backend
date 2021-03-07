@@ -1,11 +1,9 @@
 const express = require("express");
 const app = express();
-const cors = require('cors');
+const cors = require("cors");
 
 app.use(cors());
 app.use(express.json());
-
-
 
 //lista de notas
 
@@ -45,12 +43,11 @@ app.get("/", (req, res) => {
 });
 app.get("/api/notes", (req, res) => {
   res.status(200).json(notes);
- 
 });
 app.get("/api/notes/:id", (req, res) => {
   const id = Number(req.params.id);
   //El req.params siempre va a devolver un string, por lo que siempre tenemos que pasarlo a un número
-  console.log({ id }); 
+  console.log({ id });
   const note = notes.find((note) => note.id === id);
   console.log({ note });
   if (note) {
@@ -80,14 +77,13 @@ app.post("/api/notes", (req, res) => {
   const newNote = {
     id: maxId + 1,
     content: note.content,
-    important: typeof note.important !== 'undefined' ? note.important : false,
+    important: typeof note.important !== "undefined" ? note.important : false,
     date: new Date().toISOString(),
   };
   notes = [...notes, newNote];
 
   res.status(201).json(newNote);
 });
-
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
