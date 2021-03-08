@@ -9,6 +9,7 @@ const handleErrors = require("./middleware/handleErrors");
 
 app.use(cors());
 app.use(express.json());
+//app.use(express.static("public"));
 
 //lista de notas
 
